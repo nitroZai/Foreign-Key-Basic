@@ -1,0 +1,25 @@
+
+Student ID: {{student.pk}}
+
+<form action="{%url 'submitmarks' id=student.pk%}" method="post">
+
+    {% csrf_token %}
+
+    {{ semester.subject1 }}
+    <input type="text" name="subject1">
+
+    <br>
+
+    {{ semester.subject2 }}
+    <input type="text" name="subject2">
+
+    <br>
+
+    {{ semester.subject3 }}
+    <input type="text" name="subject3">
+
+    <br>
+
+    <input type="submit" value="Submit The details">
+
+</form>

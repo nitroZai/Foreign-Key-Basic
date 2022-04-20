@@ -1,0 +1,45 @@
+
+
+
+<form action="{% url 'entermarks' %}" method="post">
+
+    {% csrf_token %}
+
+    Name:
+    <input type="text" name="name">
+
+    <br>
+
+    Phone:
+    <input type="text" name="phone">
+
+    <br>
+
+    Email:
+    <input type="text" name="email">
+
+    <br>
+
+    Branch:
+    <select name="branch">
+        <option value="IT">IT</option>
+        <option value="CSE">CSE</option>
+    </select>
+    
+    <br>
+
+    Semester:
+    <select name="semester">
+
+        {% for sem in semesters %}
+
+        <option value="{{ sem.semester }}">{{ sem.semester }}</option>
+
+        {% endfor %}
+    </select>
+
+    <br>
+
+    <input type="submit" value="Next">
+
+</form>
